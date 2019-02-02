@@ -1,0 +1,9 @@
+
+☐ Portar projeto pra "React Router"
+
+☐ Criar formulário de Login
+☐ Enviar dados de login pra API Rails e validar
+☐ Chamar API e obter os artistas que o usuário segue, do servidor Rails
+
+☐ Adicionar bootstrap no projeto pra ficar menos feio
+☐ Dar um jeito de usar diretivas :hover

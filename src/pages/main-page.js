@@ -1,11 +1,12 @@
 import React from 'react';
 import Clock from '../components/clock'
 import SetTitle from '../components/set-title'
-import Button from '../components/button'
+import { Link } from 'react-router-dom';
 
 
 
 export default class MainPage extends React.Component{
+// const MainPage = React.createClass({
 
 	render(){
 		return (
@@ -15,10 +16,12 @@ export default class MainPage extends React.Component{
 					MAIN PAGE
 				</label>
 				<br/>
+				<Link to="/login/">
+					LOGIN
+				</Link>
 				Login to Access your artists list
-				<Button onClick={this.props.onClick} label="Login"/>
 				<Clock/>	
 			</div>
 		);
 	}
-}
+};
