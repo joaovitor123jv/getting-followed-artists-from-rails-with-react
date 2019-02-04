@@ -4,9 +4,11 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import MainPage from './pages/main-page';
 import LoginPage from './pages/login-page';
 import NotFoundPage from './pages/not-found-page';
+import ArtistListPage from './pages/artist-list';
 
 
 import { NavbarStyle, NavbarListItemStyle, NavbarLinkStyle,NavbarLogoStyle } from "./styles/navbar";
+// import AuthorizeSpotify from './actions/authorize-spotify';
 
 function NavbarListItem(props){
 	return (
@@ -28,6 +30,7 @@ class Navbar extends React.Component{
 				<ul>
 					<NavbarListItem path="/" label="HOME"/>
 					<NavbarListItem path="/login" label="LoGiN"/>
+					<NavbarListItem path="/artist-list" label="ARTIST LIST"/>
 					<NavbarListItem path="/help" label="HElP"/>
 				</ul>
 				<br/>
@@ -44,6 +47,7 @@ const AppRouter = () => (
 			<Switch>
 				<Route path="/" exact component={MainPage}/>
 				<Route path="/login" component={LoginPage}/>
+				<Route path="/artist-list" component={ArtistListPage}/>
 				<Route path="*" component={NotFoundPage}/>
 			</Switch>
 		</div>

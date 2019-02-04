@@ -5,10 +5,18 @@ import Artist from '../components/artist';
 import SetTitle from '../components/set-title'
 import { Link } from 'react-router-dom';
 
+
 class LoginForm extends React.Component{
 	constructor(props){
 		super(props);
-		this.state = { loginData: '', passwordData: '' };
+
+		// const urlParams = new URLSearchParams(window.location.search);
+		// const isUserAuthorized = urlParams.has('authorized') ? true : false;
+
+		this.state = { 
+			loginData: '', 
+			passwordData: ''
+		};
 
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleLoginChange = this.handleLoginChange.bind(this);
@@ -66,8 +74,8 @@ export default class LoginPage extends React.Component{
 				<label>
 					LOGIN PAGE
 				</label>
-				<Link to="/">
-					HOME
+				<Link to="/artist-list">
+					ARTIST LIST
 				</Link>
 				<label>
 					Welcome to myArtists.
