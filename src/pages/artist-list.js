@@ -44,8 +44,10 @@ function FetchArtistOrShow(props){
 }
 
 function TableItem(props){
+		// <tr key={props.item.name}>
 	return (
-		<tr key={props.item.name}>
+		<tr key={props.index}>
+			<td> {props.item.name} </td>
 			<td> {props.index + 1} </td>
 			<td> {props.item.followers_number} </td>
 		</tr>
@@ -60,9 +62,11 @@ function Followed(props){
 			<h2>Followed Artists</h2>
 			<table className="table">
 				<thead>
-					<tr> # </tr>
-					<tr> Artist Name </tr>
-					<tr> Followers Number </tr>
+					<tr>
+						<th> # </th>
+						<th> Artist Name </th>
+						<th> Followers Number </th>
+					</tr>
 				</thead>
 				<tbody>
 					{props.artistList.map((e, index) => <TableItem item={e} index={index} />)}
@@ -100,13 +104,12 @@ export default class ArtistListPage extends React.Component{
 
 		this.loadArtistList = this.loadArtistList.bind(this);
 
-		console.log("STATE == ", this.state);
 	}
 
 
 	loadArtistList(){
-		fetch(getFetchArtistUrl(this.state.api_access_token, this.setState.uid))
-		.then(res => res.json())
+		fetch(getFetchArtistUrl(this.state.api_access_token, this.state.uid))
+		.then(res => { return res.json() })
 		.then(data => {
 			this.setState({
 				artistList: data.data
