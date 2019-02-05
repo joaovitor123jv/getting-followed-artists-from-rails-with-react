@@ -1,5 +1,7 @@
 import React from 'react';
 
+// Library for reference consulting
+
 export default class Clock extends React.Component{
 	constructor(props){
 		super(props);

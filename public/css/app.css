@@ -1,0 +1,240 @@
+/* 
+	This style was created by João Vitor Antoniassi Segantin. 
+	Find me in https://github.com/joaovitor123jv 
+*/
+
+
+/* General */
+.App{
+  width: 100%;
+  /* max-width: 750px; */
+  margin: 0;
+  /* padding: 30px; */
+  text-align: center;
+}
+
+h1 {
+	color: #444;
+	font-weight: 300;
+	font-size: 5em;
+	text-align: center;
+}
+
+h2 {
+	color: #555;
+	margin-top: -2em;
+	text-align: center;
+}
+
+body {
+	margin: 0;
+  background-color: #ffffff;
+}
+
+/* Jumbotron */
+.jumbotron{
+	margin-left: 3em;
+	margin-right: 3em;
+	padding-top: 0.2em;
+	padding-bottom: 2.2em;
+	background-color: #e1e1e1;
+}
+
+.jumbotron a {
+	padding-left: 2em;
+	padding-right: 2em;
+	border-radius: 1em;
+	text-decoration: none;
+	background-color: #229966;
+	color: #ffffff;
+}
+
+.jumbotron a:hover{
+	color: #229966;
+	background-color: #ffffff;
+}
+
+/* Navbar */
+nav {
+	background-color: #2962ff;
+	overflow: hidden;
+	display: block;
+	/* border-radius: 1em; */
+	color: #ffffff;
+	margin-bottom: 1.5em;
+	box-shadow: 0.0em 0.5em 1.5em #888;
+}
+
+nav .logo a {
+	color: #ffffff;
+	text-decoration: none;
+	font-size: 1.6em;
+	font-weight: 800;
+	padding-left: 1em;
+	padding-right: 1em;
+	align-content: center;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+	vertical-align: middle;
+	float: left;
+}
+
+nav .logo a:hover {
+	color: #ffffff;
+	background-color: #448aff;
+	font-weight: bold;
+}
+
+nav ul{
+	margin-top: 0;
+}
+
+nav ul li {
+	list-style-type: none;
+	float: right;
+}
+
+nav ul li:hover{
+	background-color: #448aff;
+}
+
+nav ul li a{
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+
+	font-size: 1.6em;
+	font-weight: 500;
+	display: block;
+	color: #ffffff;
+	/* vertical-align: middle; */
+	text-align: center;
+	text-decoration: none;
+}
+
+nav ul li a:hover{
+	color: #ffffff;
+}
+
+/* Content */
+.centralize {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.content {
+	margin-right: 3em;
+	margin-left: 3em;
+	height: 100%;
+	min-height: 20em;
+	padding-top: 2em;
+}
+
+.info {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+	border-radius: 1em;	
+	display: inline-block;
+	background-color: #448aff;
+	color: #ffffff;
+	vertical-align: middle;	
+}
+
+.info a{
+	color: #ffffff;
+	background-color: #2962ff;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	padding-right: 0.4em;
+	padding-left: 0.4em;
+	border-radius: 0.5em;
+	text-decoration: none;
+}
+
+.info a:hover {
+	color: #2962ff;
+	background-color: #ffffff;
+}
+
+
+/* Fetch Artist Area */
+.fetch-artist-area {
+	margin-top: 2em;
+}
+
+.fetch-artist-area h2 {
+	margin-top: 0;
+}
+
+.fetch-artist-area button{
+	font-size: 1.5em;
+	margin-left: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+	border-radius: 1em;
+	background-color: #229966;
+	color: white;
+}
+
+.fetch-artist-area button:hover {
+	color: #229966;
+	background-color: white;
+}
+
+/* .fetch-artist-area .info {
+	width: 100%;
+	clear: both;
+} */
+
+.artists-list {
+	width: 100%;
+	margin-top: 5em;
+}
+
+.artists-list .info {
+	clear: both;
+}
+
+/* TABLES */
+table{
+  width: 100%;
+  text-align: center;
+	margin-bottom: 2em;
+}
+
+thead{
+	background-color: #90caf9;
+}
+
+
+
+th, td{
+  padding: 12px;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: none;
+	border-right: none;
+}
+
+th:first-child, td:first-child{
+  padding-left: 0; 
+}
+
+th:last-child, td:last-child{
+  padding-right: 0;
+}
+
+tbody tr.bg-color-1 {
+	background-color: #e9f1ff;
+}
+
+tbody tr.bg-color-2 {
+	background-color: #d4eeff;
+}
+
+tbody tr:hover {
+	background-color: #bbdefb;
+}

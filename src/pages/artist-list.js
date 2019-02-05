@@ -1,11 +1,7 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
-// import Pusher from 'pusher-js';
-// import format from 'date-fns/format';
 
-import Button from '../components/button'
-
-import '../css/login.css';
+import Button from '../components/button';
+import Artists from '../components/artists';
 
 function generateGetParams(paramName, paramContent){
 	return '&'+paramName+"="+paramContent;
@@ -21,64 +17,36 @@ function getFetchArtistUrl(api_access_token , uid) {
 function FetchArtist(props){
 	return (
 		<div>
-			<label>
-				Welcome! {props.name}
-			</label>
-			<br/>
-			<a href="http://localhost:8000/api/v1/get-user-artists">
-				Get Artist List
-			</a>
-			<Button label="Get Artist List" onClick={props.onClick}/>
+			<h2>
+				Welcome, {props.name}!
+			</h2>	
+			<Button label="Load Artist List" onClick={props.onClick}/>
 		</div>
 	);
 }
 
 function FetchArtistOrShow(props){
-	if(props.artistList.length > 0){
-		return <Followed artistList={props.artistList}/>
-	} else if(props.isUserAuthorized){
-		return <FetchArtist name={props.name} onClick={props.onClick}/>
+	if((props.artistList.length === 0) && props.isUserAuthorized){
+		return (
+			<div class="centralize">
+				<div class="fetch-artist-area">
+					<FetchArtist name={props.name} onClick={props.onClick}/>
+				</div>
+			</div>
+		);
 	} else {
 		return null;
 	}
 }
 
-function TableItem(props){
-		// <tr key={props.item.name}>
-	return (
-		<tr key={props.index}>
-			<td> {props.item.name} </td>
-			<td> {props.index + 1} </td>
-			<td> {props.item.followers_number} </td>
-		</tr>
-	);
-}
-
-function Followed(props){
-	// artistList.map((e, index) => <TableItem item)
-	/* {artistList.map((e, index) => TableItem(e, index))} */
-	return (
-		<div className="artists-list">
-			<h2>Followed Artists</h2>
-			<table className="table">
-				<thead>
-					<tr>
-						<th> # </th>
-						<th> Artist Name </th>
-						<th> Followers Number </th>
-					</tr>
-				</thead>
-				<tbody>
-					{props.artistList.map((e, index) => <TableItem item={e} index={index} />)}
-				</tbody>
-			</table>
-		</div>
-	);
-}
 
 function ConnectToSpotify(){
 	return (
-		<a href="http://localhost:8000/api/v1/authorize-spotify">Connect your Spotify account</a>
+		<div className="centralize">
+			<a href="http://localhost:8000/api/v1/authorize-spotify">
+				Connect to your Spotify account
+			</a>
+		</div>
 	);
 }
 
@@ -103,7 +71,6 @@ export default class ArtistListPage extends React.Component{
 		};
 
 		this.loadArtistList = this.loadArtistList.bind(this);
-
 	}
 
 
@@ -133,22 +100,23 @@ export default class ArtistListPage extends React.Component{
 
 		const connectSpotify = isUserAuthorized ? '' : <ConnectToSpotify/>;
 
+		const showArtistList = (artistList.length > 0) ? (
+			<Artists artistList={this.state.artistList}/>
+		) : ( '');
+
 		return (
-			<div>
-				<h1>
-					Artists Followed on Spotify
-				</h1>
-				<p>
-					View the artists you're following in realtime with Spotify and Pusher
-				</p>
-				{ connectSpotify }
-				<FetchArtistOrShow artistList={artistList} 
-					isUserAuthorized={isUserAuthorized} 
-					name={this.state.userName} 
-					onClick={this.loadArtistList}
-					api_access_token={this.state.api_access_token}
-					uid={this.state.uid}
-				/>
+			<div className="content">
+				<div className="jumbotron">
+					<h1> Artists Followed on Spotify </h1>
+					<h2> View the artists you're following at Spotify</h2>
+					<FetchArtistOrShow artistList={artistList} 
+						isUserAuthorized={isUserAuthorized} 
+						name={this.state.userName} 
+						onClick={this.loadArtistList}
+					/>
+					{ connectSpotify }
+				</div>
+				{showArtistList}
 			</div>
 		);
 	}

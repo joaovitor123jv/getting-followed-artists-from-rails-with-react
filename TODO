@@ -3,8 +3,8 @@
 
 ✔ Criar formulário de Login @done(19-02-02 18:00)
 ✔ Importar bibliotecas NPM para requisições e testar @done(19-02-02 18:04)
-☐ Enviar dados de login pra API Rails e validar
-☐ Chamar API e obter os artistas que o usuário segue, do servidor Rails
+✔ Enviar dados de login pra API Rails e validar @done(19-02-05 01:52)
+✔ Chamar API e obter os artistas que o usuário segue, do servidor Rails @done(19-02-05 01:52)
 
-☐ Adicionar bootstrap no projeto pra ficar menos feio
-☐ Dar um jeito de usar diretivas :hover
+✔ Deixar menos feio @done(19-02-05 01:52)
+✔ Dar um jeito de usar diretivas :hover @done(19-02-05 01:52)

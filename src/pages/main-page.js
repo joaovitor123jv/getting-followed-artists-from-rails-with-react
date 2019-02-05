@@ -1,5 +1,4 @@
 import React from 'react';
-import Clock from '../components/clock'
 import SetTitle from '../components/set-title'
 import { Link } from 'react-router-dom';
 
@@ -10,17 +9,22 @@ export default class MainPage extends React.Component{
 
 	render(){
 		return (
-			<div className="page">
-				<SetTitle title="myArtists | Main Page"/>
-				<label>
-					MAIN PAGE
-				</label>
-				<br/>
-				<Link to="/login/">
-					LOGIN
-				</Link>
-				Login to Access your artists list
-				<Clock/>	
+			<div className="content">
+				<div className="jumbotron">
+					<SetTitle title="myArtists | Main Page"/>
+					<h1>
+						Welcome to myArtists
+					</h1>
+					<h2>
+						Here you can check the artists you Follow on Spotify
+					</h2>
+				</div>
+				<div className="content centralize">
+					<div className="info">
+						Info: To view the artists you follow, please go to the 
+						&nbsp;<Link to="/artist-list">Artist List</Link> page
+					</div>
+				</div>
 			</div>
 		);
 	}
